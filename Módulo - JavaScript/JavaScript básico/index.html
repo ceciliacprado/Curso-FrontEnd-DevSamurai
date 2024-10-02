@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript basico</title>
 </head>
@@ -10,48 +10,73 @@
 <body>
     <script>
 
-        //Expressões e operadores 
+        //Estrutura de desição
 
-        // const media = 10+10+10/3
-        // let num = 0
-        // num = num + 1 
-        // num++
-        // num--
-        // ++num
-        // --num
-        //  console.log("num", num++)
-        //  console.log("num", ++num)
+        console.log("inicio do programa")
+        if(1 < 2 && 2 < 3){
+            console.log("verdadeiro")
+        }
+        console.log("fim do programa")
 
-        let num = 0 
-        num += 2
-        num *= 2
-        console.log(num)
+        if(true){
+            console.log("verdadeiro")
+        } else {
+            console.log("falso")
+        }
+
+        if("1" == 2){
+            console.log("verdadeiro")
+        } else {
+            console.log("falso")
+        }
+
         
-        const idade = 16 
-        const limite = 18 
-        idade >= limite 
+        const valor1 = 3
+        if(valor1 < 2){
+            console.log("Condição 1")
+        } else if(valor1 == 2){
+            console.log("Condição 2")
+        } else if(valor1 == 3){
+            console.log("Condição 3")
+        } else {
+            console.log("Condição 4")
+        }
 
-        "1" === 1 
-        1 === true 
-        null === undefined
-        null !== undefined
+        let texto  = "A"
+        let valor
+        valor2 = texto == "A" ? 10 : 20
+        console.log("valor", valor2)
+        texto == "A" ? console.log("se") : console.log("senao")
 
-        console.log(0 ? "verdadeiro" : "falso")
-        console.log("" ? "verdadeiro" : "falso")
-        console.log(null ? "verdadeiro" : "falso")
-        console.log(1 ? "verdadeiro" : "falso")
+        let variavel = 2
+        switch(variavel){
+            case 1:
+                console.log("Ccondição 1")
+                break
+            case 2:
+                console.log("condição 2")
+                break
+            case 3:
+                console.log("Condição 3")
+                break
+            default:
+                console.log("Condição inexistente")
+        }
 
-        console.log(false || false)
-        console.log(true && false)
-        console.log(false || true && false)
-        console.log(true || true || true)
-        console.log(false && false && true)
-        console.log(!true)
-        console.log(!23 < 24 && "A" == "A")
-        let a = 10 
-        let b = 20 
-        console.log(a > b)
+        try {
+            console.log("chamando api...")
 
+            throw "Erro ao chamar api"
+
+            console.log("Outro comando...")
+            
+        } catch (error) {
+            
+        } finally {
+            console .log("execusão final")
+        }
+        
+      
 
     </script>
 
