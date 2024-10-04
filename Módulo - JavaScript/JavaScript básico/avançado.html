@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript avançado</title>
+</head>
+
+<body>
+    <script>
+
+        // Conversão e manupulação de dados
+
+        console.log(Number("2" + 2))
+
+        console.log(typeof("2"))
+        console.log(String(2))
+        console.log(Number("a"))
+        console.log(Number(true))
+
+        console.log(Boolean(""))
+        console.log(Boolean("abc"))
+        console.log(Boolean(0))
+        console.log(Boolean(1))
+        console.log(Number(true))
+        console.log(Number(false))
+        console.log(String(false))
+        console.log(String(true))
+
+        console.log(Date("04/12/2022"))
+        console.log(Date("2022-04-03"))
+        console.log(Date("2022 04 1019"))
+        console.log(Date().toString())
+
+        let name = "Cecilia"
+        console.log(name[0])
+        for (const letter of name){
+            console.log(letter)
+        }
+        console.log(name.length)
+
+        let values = [1, 2, 3, 4, 5]
+        values = ["C", "E", "C", "I", "L", "I", "A"]
+        console.log(values.join(""))
+        let fruit = "banana"
+        console.log(fruit.split(","))
+
+        let value = 1234.255
+        console.log(value.toFixed(2))
+        console.log(Math.ceil(value))
+        console.log(Math.floor(value))
+        console.log(Math.round(value))
+        console.log(new Intl.NumberFormat("pt-BR").format(value))
+
+        let name2 = "Cecilia"
+        let num = 1234
+        console.log(name2.length)
+        console.log(String(num).length)
+
+        let frase = "O rato roeu a roupa do rei de Roma"
+        console.log(frase.split(" ").join("-"))
+
+        let frase2 = "a casa é bonita"
+        console.log(frase.toLowerCase())
+        console.log(frase.toUpperCase())
+        console.log("Cecilia".toLocaleUpperCase())
+
+        let frase3 = "os meninos são bonitos"
+        console.log(frase3.toLocaleLowerCase().includes("meninos"))
+
+        let frase4 = "aquela casa é bonita"
+        console.log(frase4.replace("casa", "casa rosa"))
+        let value3 = 12632
+        console.log(value3.toFixed(2).replace(".", ","))
+
+        const people = [
+            {
+                name: "Cecilia",
+                age: 30,
+                city: "São Paulo"
+            },
+            {
+                name: "João",
+                age: 25,
+                city: "Rio de Janeiro"
+            },
+            {
+                name: "Maria",
+                age: 35,
+                city: "Curitiba"
+            }
+        ]
+        console.log(JSON.stringify(people))
+        const json = '[{"name":"Cecilia","age":30,"city":"São Paulo"},{"name":"João","age":25,"city":"Rio de Janeiro"},{"name":"Maria","age":35,"city":"Curitiba"}]'
+        console.log(JSON.parse(json))
+
+    </script>
+</body>
+
+</html>
