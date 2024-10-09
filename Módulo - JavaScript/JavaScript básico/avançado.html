@@ -20,6 +20,28 @@
         people.unshift("Cibele");
         console.log(people);
 
+        let set1 = [1, 2, 3, 4, 5];
+        let set2 = [4, 5, 6, 7, 8]; 
+        let set3 = [11, 12, 13, 14, 15];
+        console.log(set1 + set2);
+        console.log([set1, set2]);
+        console.log(set1.concat(set2).concat(set3));
+
+        let set = [1, 2, 3, 4, 5];
+        let [n1, n2] = set;
+        console.log("n1", n1);
+        console.log("n2", n2);
+        function myFunction(){
+            const x = 10
+            const y = 400
+            return [x, y]
+        }
+        const myArray = myFunction()
+        console.log(myArray[0]);
+        console.log(myArray[1]);
+        const [x,y] = myFunction()
+        console.log("x", x);
+        console.log("y", y);
 
     </script>
 </body>
