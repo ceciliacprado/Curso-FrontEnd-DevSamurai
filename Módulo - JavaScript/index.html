@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculo</title>
+</head>
+<body>
+    <!--Dom - O DOM (Document Object Model) é a representação de dados dos objetos que compõem a estrutura e o conteúdo de um documento na Web.-->
+
+    <img src="https://img.freepik.com/vetores-premium/avatar-icon002_750950-52.jpg" alt="">
+    <h1 id="person-name" class="text">Seu Nome</h1>
+    <h2 id="title">Minha página</h2>
+    <h2>Programadora Web - Júnior</h2>
+    <p>
+        Conhecimentos em programação Frontend, Backend para desenvolvimentos de sites e sistemas web.
+    </p>
+    <p>
+        Para mais detalhes, por favor, visite meu <a href="https://github.com/ceciliacprado">Github</a> ou 
+        meu <a href="https://www.linkedin.com/in/ceciliacamargoprado/">Linkedin</a>.
+    </p>
+
+    <button>clique</button>
+
+    <input type="text" name="" id="">
+
+    <script>
+       console.log(document)
+       console.log(document.body)
+
+       console.log("*", document.querySelectorAll("*"))
+       console.log("id", document.querySelector("#person-name"))
+       console.log("tag", document.querySelectorAll("p"))
+       console.log("class", document.querySelectorAll(".text"))
+       console.log("attr", document.querySelectorAll("a[href]"))
+       console.log(
+        "attr", 
+        document.querySelectorAll("a[href='https://github.com/ceciliacprado']")
+       )
+       for (const el of document.querySelectorAll("*")){
+        console.log("el", el)
+       }
+
+       const titleEl = document.querySelector("#person-name")
+       console.log("titleEl value:", titleEl.innerHTML)
+       titleEl.innerHTML = "Cecília Camargo Prado"
+       titleEl.style.color = "red"
+
+       const subtitleEl = document.createElement("h2")
+       subtitleEl.innerHTML = "Projetos"
+       const pjListEl = document.createElement("ul")
+       const pjListItem1El = document.createElement("li")
+       pjListItem1El.innerHTML = "Projeto 1"
+       const pjListItem2El = document.createElement("li")
+       pjListItem2El.innerHTML = "Projeto 2"
+       const pjListItem3El = document.createElement("li")
+       pjListItem3El.innerHTML = "Projeto 3"
+       pjListEl.append(pjListItem1El)
+       pjListEl.append(pjListItem2El)
+       pjListEl.append(pjListItem3El)
+
+       document.body.append(subtitleEl)
+       document.body.append(pjListEl)
+
+    //    for (const i = 0; i < 3; i++) {
+    //     pjListItem3El.innerHTML = `Projeto ${i}`
+    //    }
+
+   
+    </script>
+    
+</body>
+</html>
