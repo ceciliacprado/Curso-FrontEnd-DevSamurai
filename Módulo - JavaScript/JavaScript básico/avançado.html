@@ -10,38 +10,79 @@
 <body>
     <script>
 
-        // Array
+        // Filter, map, reduce
 
-        let people = ['João', 'Maria', 'José', 'Pedro', 'Ana'];
-        console.log(people);
-        console.log(people[people.length - 1]);
-        console.log(people.slice(1, 3));
-        people.push("Lucas");
-        people.unshift("Cibele");
-        console.log(people);
+        const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        // // let res = []
+        // for (const n of numeros) {
+        //     if (n > 10) {
+        //         res.push(n)
+        //     }
+        // }
 
-        let set1 = [1, 2, 3, 4, 5];
-        let set2 = [4, 5, 6, 7, 8]; 
-        let set3 = [11, 12, 13, 14, 15];
-        console.log(set1 + set2);
-        console.log([set1, set2]);
-        console.log(set1.concat(set2).concat(set3));
+        // const gt10 = function(item){
+        //     return item > 10    
+        // }
+        // numeros.filter(gt10)
+        // let res = numeros.filter(function(item) {
+        //     return item > 10
+        // })  
+        // let res = numeros.filter((n) => n > 10)
+        // console.log(res)
+        // const people = [
+        //     {name: "Felipe", age: 25},
+        //     {name: "Maria", age: 30},
+        //     {name: "João", age: 20},
+        // ]
+        // const m = people.filter((p) => p.age >= 25)
+        // console.log(m)
 
-        let set = [1, 2, 3, 4, 5];
-        let [n1, n2] = set;
-        console.log("n1", n1);
-        console.log("n2", n2);
-        function myFunction(){
-            const x = 10
-            const y = 400
-            return [x, y]
-        }
-        const myArray = myFunction()
-        console.log(myArray[0]);
-        console.log(myArray[1]);
-        const [x,y] = myFunction()
-        console.log("x", x);
-        console.log("y", y);
+        // const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        // const double = numbers.map((n) => n * 2)
+        // console.log(double)
+        // const peopleN = people.map((p) => p.name.toLocaleUpperCase())
+        // console.log(peopleN)
+
+        let values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        // function callback(acumulator, currentValue, index, array) {
+        //     console.log('acumulator', acumulator)
+        //     console.log('currentValue', currentValue)
+        //     console.log('index', index)
+        //     console.log('array', array)
+        //     console.log("----")
+        //     return acumulator + 1
+        // }
+
+
+        // function soma(total, item){
+        //     total + item
+        // }
+
+        // let sum = values.reduce((total, item) => total + item, 0)
+        // console.log("sum", sum)
+
+        // let avg = values.reduce(
+        //     (total, item, index) => (total + item) / (index + 1), 0
+        // )
+        // console.log("avg", avg)
+
+        // let double = values.reduce((total, item) => total.concat(item * 2), [])
+        // console.log("double", double)
+
+        let newValues = values.reduce((total, item) => {
+            console.log("---")
+            console.log('item', item)
+
+            if (item > 2){
+                total.push(item)
+            }
+
+            console.log('total', total)
+            
+            return total
+        }, [])
+        console.log("newValues", newValues)
+
 
     </script>
 </body>
