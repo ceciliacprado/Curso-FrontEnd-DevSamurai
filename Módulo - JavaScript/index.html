@@ -22,7 +22,11 @@
 
     <button>clique</button>
 
-    <input type="text" name="" id="">
+    <form action="https://google.com/search" method="get">
+        <label for="q">Busca</label>
+        <input type="text" name="q"/>
+        <input type="submit" value="Pesquisar"/>
+    </form>
 
     <script>
        console.log(document)
@@ -66,7 +70,47 @@
     //     pjListItem3El.innerHTML = `Projeto ${i}`
     //    }
 
-   
+     //eventos 
+
+     const principal = () => {
+        //function1
+        //function2
+        //etc
+       }
+       document.addEventListener("DOMContentLoaded", () => {
+        const el1 = document.getElementById("title")
+        console.log("el1", el1)
+       })
+
+       const button = document.querySelector("button")
+       button.addEventListener("click", () => {
+        console.log("clicou no botão")
+       })
+
+       const hyperlink = document.querySelector("a")
+       hyperlink.addEventListener("click", () => {
+        event.preventDefault()
+        console.log("clicou no link")
+       })
+
+    //    const inputEl = document.querySelector("input[type='text']")
+    //    inputEl.addEventListener("keydown", (event) => {
+    //     console.log("event", `${event.key} - ${event.keyCode}`)
+    //     if (event.keyCode === 32){
+    //         alert(`Enter pressionado - ${inputEl.value}`)
+    //     }
+    //    })
+
+    const formEl = document.querySelector("form")
+    formEl.addEventListener("submit", (event) => {
+        const queryValue = event.target.querySelector("input[name='q']").value
+        console.log("queryValue", queryValue)
+
+        if (!queryValue){
+            event.preventDefault()
+            alert("Digite algo para pesquisar")
+        }
+    })
     </script>
     
 </body>
