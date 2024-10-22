@@ -25,21 +25,53 @@
     </p>
 
     <h3 id="title">Texto altera cor</h3>
-    <button id="chage-color">Alterar cor</button>
+    <button>Executar</button>
 
     <script>
 
-    //manipulação de estilos 
-    const titleEl = document.querySelector('#title')
-    const buttonEl = document.querySelector('#chage-color')
-    buttonEl.addEventListener('click', () => {
-        // if (titleEl.classList.contains("higlight")) {
-        //     titleEl.classList.remove("higlight")
-        // } else {
-        //     titleEl.classList.add("higlight")
-        // }
-        titleEl.classList.toggle("higlight")
+    //Promisses - permite a crição de funções que vão rodar de forma assíncrona. 
+
+    let count = 0 
+    function testPromise() {
+        const promiseCount = ++count
+
+        console.log("sync started")
+
+        const p1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log("p1 finished")
+                resolve(1)
+            }, 1000)
+        })
+
+        const p2 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log("p2 finished")
+                resolve(2)
+            }, 2000)
+        })
+
+        const p3 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log("p3 finished")
+                resolve(3)
+            }, 3000)
+        })
+
+    //     p1.then(() => {
+    //         console.log("p1 finished")
+    //     })
+
+    //     console.log("sync finished")
+    // }
+
+    Promise.all([p1, p2, p3]).then((values) => {
+        console.log("promise values", values)
     })
+}
+    
+    const buttonEl = document.querySelector("button")
+    buttonEl.addEventListener("click", testPromise)
 
     </script>
     
