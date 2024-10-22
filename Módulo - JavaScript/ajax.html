@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - ajax</title>
+</head>
+<body>
+    <button>Recuperar Dados</button>
+    <br>
+    <br>
+    <script>
+        const loadData = () => {
+            const xhr = new XMLHttpRequest()
+
+            xhr.open('GET', "https://api.github.com/users/ceciliacprado")
+            xhr.send(null)
+
+            xhr.onreadystatechange = () => {
+                if(xhr.readyState === 4){
+                    const res = JSON.parse(xhr.responseText)
+
+                    const name = res.name
+                    const avatarUrl = res.avatar_url
+                    const followers = res.followers
+                    const blogUrl = res.blog
+
+                   // console.log({name, avatarUrl, followers, blogUrl})
+
+                   const avatarEl = document.createElement('img')
+                   avatarEl.setAttribute('src', avatarUrl)
+                   avatarEl.setAttribute('width', '200')
+                   console.log(avatarEl)
+
+                   const nameEl = document.createElement('h1')
+                   nameEl.innerText = name
+
+                   const followersEl = document.createElement('p')
+                   followersEl.innerText = `Seguidores: ${followers}`
+
+                   const blogEl = document.createElement('a')
+                   blogEl.setAttribute("href", `https://${blogUrl}`)
+                   blogEl.innerText = blogUrl
+
+                   document.body.appendChild(avatarEl)
+                   document.body.appendChild(nameEl)
+                   document.body.appendChild(followersEl)
+                   document.body.appendChild(blogEl)
+                }
+            }
+        }
+
+        const buttonEl = document.querySelector('button')
+        buttonEl.addEventListener('click', loadData)
+    </script>
+</body>
+</html>
